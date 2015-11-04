@@ -2,4 +2,5 @@
     <string name="app_name">Example Intent Batch 7</string>
     <string name="start_other_activiy">Start other Activity</string>
     <string name="start_application">Start Application</string>
+    <string name="some">Coloca Algo</string>
 </resources>

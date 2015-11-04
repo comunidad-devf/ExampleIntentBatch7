@@ -10,6 +10,7 @@
     tools:context="devf.exampleintentbatch7.SecondActivity">
 
     <TextView
+        android:id="@+id/text_view_second_activity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"

@@ -16,6 +16,13 @@
         android:layout_height="wrap_content"
         android:text="@string/start_application" />
 
+
+    <EditText
+        android:id="@+id/edittext_some"
+        android:layout_width="match_parent"
+        android:hint="@string/some"
+        android:layout_height="wrap_content" />
+
     <Button
         android:id="@+id/button_start_activity"
         android:layout_width="match_parent"

@@ -1,7 +1,9 @@
 package devf.exampleintentbatch7;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
 public class SecondActivity extends AppCompatActivity {
 
@@ -9,5 +11,12 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        Intent intent = getIntent();
+        String textSome = intent.getStringExtra("my_key");
+
+        TextView textViewSecondActivity = (TextView) findViewById(R.id.text_view_second_activity);
+        textViewSecondActivity.setText(textSome);
+
     }
 }
