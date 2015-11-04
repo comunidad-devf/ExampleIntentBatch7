@@ -17,36 +17,59 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button buttonApplication = (Button) findViewById(R.id.button_start_activity);
-        buttonApplication.setOnClickListener(this);
+        setupButtons();
 
-        Button buttonActivity = (Button) findViewById(R.id.button_start_activity);
-        buttonActivity.setOnClickListener(this);
+        setupEdittexts();
 
+    }
+
+
+    private void setupButtons() {
+        findViewById(R.id.button_start_activity).setOnClickListener(this);
+        findViewById(R.id.button_start_application_link).setOnClickListener(this);
+        findViewById(R.id.button_start_application_call).setOnClickListener(this);
+    }
+
+    private void setupEdittexts() {
         editTextSome = (EditText) findViewById(R.id.edittext_some);
-
     }
 
     @Override
     public void onClick(View view) {
 
         switch (view.getId()){
-            case R.id.button_start_application:
+            case R.id.button_start_application_link:
 
-                Uri uri = Uri.parse("http://www.devf.mx/");
-                Intent intentApplication = new Intent(Intent.ACTION_VIEW, uri);
-                startActivity(intentApplication);
+                startApplication("http://www.devf.mx/", Intent.ACTION_VIEW);
+                break;
 
+            case R.id.button_start_application_call:
+
+                startApplication("tel:5543567654", Intent.ACTION_CALL);
                 break;
 
             case R.id.button_start_activity:
 
-                Intent intentActivity = new Intent(this, SecondActivity.class);
                 String textSome = editTextSome.getText().toString();
-                intentActivity.putExtra("my_key", textSome);
+                startOtherActivity(SecondActivity.class, Constants.MY_KEY, textSome);
 
-                startActivity(intentActivity);
                 break;
         }
     }
+
+    private void startApplication(String data, String action)
+    {
+        Uri uri = Uri.parse(data);
+        Intent intentApplication = new Intent(action, uri);
+        startActivity(intentApplication);
+    }
+
+    private void startOtherActivity(Class activityClass, String key, String value) {
+        Intent intent = new Intent(this, activityClass);
+        intent.putExtra(key, value);
+
+        startActivity(intent);
+
+    }
+
 }

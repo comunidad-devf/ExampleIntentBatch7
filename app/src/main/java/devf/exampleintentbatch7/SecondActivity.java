@@ -13,7 +13,7 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Intent intent = getIntent();
-        String textSome = intent.getStringExtra("my_key");
+        String textSome = intent.getStringExtra(Constants.MY_KEY);
 
         TextView textViewSecondActivity = (TextView) findViewById(R.id.text_view_second_activity);
         textViewSecondActivity.setText(textSome);

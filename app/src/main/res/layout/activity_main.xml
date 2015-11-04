@@ -11,10 +11,15 @@
     tools:context="devf.exampleintentbatch7.MainActivity">
 
     <Button
-        android:id="@+id/button_start_application"
+        android:id="@+id/button_start_application_link"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/start_application" />
+        android:text="@string/start_application_link" />
+    <Button
+        android:id="@+id/button_start_application_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/start_application_call" />
 
 
     <EditText
